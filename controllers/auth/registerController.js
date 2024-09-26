@@ -77,7 +77,7 @@ const register = async (req, res) => {
         }
         user.password = hashedPassword;
         user.isOnline = true;
-        user.role = 'user';
+        user.role = role;
 
         // Generate authToken and assign it before saving
         user.authToken = generateAuthToken({ ...user.toJSON() });
